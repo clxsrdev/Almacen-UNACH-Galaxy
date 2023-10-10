@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNACH Galaxy</title>
-    <link rel="icon" href="/image/moonico.png">
+    <link rel="icon" href="./Image/moonico.png">
     <link href="./CSS/dash-style.css" rel="stylesheet">
 
     <!-- Google Fonts -->
@@ -38,9 +38,10 @@
         </label>
 
         <nav class="navbar">
-            <a class="welcome" href="#">Bienvenido</a>
-            <a class="user" href="#">clxsrdev</a>
-            <a class="close" href="#">Cerrar sesión</a>
+            <a class="welcome" href="#">¡Hola,</a>
+            <a class="user" href="#"><?php echo $_SESSION['nomusuario']; ?>!</a>
+            <a class="close" href="cerrar.php">Cerrar sesión</a>
+
         </nav>
     </header>
 
@@ -53,68 +54,65 @@
             </div>
         </section>
         <section class="table__body">
-            <table id="productTable">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th> </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>iPhone 15</td>
-                        <td>12600</td>
-                        <td><a href="#"><i class='bx bx-minus-circle' ></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>Apple TV</td>
-                        <td>16000</td>
-                        <td><a href="#"><i class='bx bx-minus-circle' ></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>MacbookAir</td>
-                        <td>20000</td>
-                        <td><a href="#"><i class='bx bx-minus-circle' ></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>iPhone 15</td>
-                        <td>12600</td>
-                        <td><a href="#"><i class='bx bx-minus-circle' ></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>Apple TV</td>
-                        <td>16000</td>
-                        <td><a href="#"><i class='bx bx-minus-circle' ></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>MacbookAir</td>
-                        <td>20000</td>
-                        <td><a href="#"><i class='bx bx-minus-circle' ></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>iPhone 15</td>
-                        <td>12600</td>
-                        <td><a href="#"><i class='bx bx-minus-circle' ></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>Apple TV</td>
-                        <td>16000</td>
-                        <td><a href="#"><i class='bx bx-minus-circle' ></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>MacbookAir</td>
-                        <td>20000</td>
-                        <td><a href="#"><i class='bx bx-minus-circle' ></i></a></td>
-                    </tr>
-                </tbody>
-            </table>
+        <?php
+
+            include('conexion.php');
+            $con = conectaDB();
+
+            $sql ="select id_producto,desc_producto,precio,stock from productos";
+                
+            echo "<table id='productTable'>";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th>Nombre</th>";
+            echo "<th>Precio</th>";
+            echo "<th>Stock</th>";
+            echo "<th> </th>";
+            echo "</tr>";
+            echo "</thead>";
+            echo "<tbody>";
+
+            $resultado = mysqli_query($con,$sql);  
+            while($fila = mysqli_fetch_row($resultado)){
+
+                echo "<tr>";
+                    echo "<td>".strtoupper($fila[1])."</td>";
+                    echo "<td>".$fila[2]."</td>";
+                    echo "<td>".$fila[3]."</td>";
+                    echo "<td><a href='controller/eliminarProducto.php?idp=".$fila[0]."'><i class='bx bx-minus-circle' ></i></a></td>";
+                echo "</tr>";
+            }
+            echo "</tbody> </table>";
+        ?>
         </section>
     </main>
 
     <div class="addnew">
         <h3>Agregar uno nuevo:</h3>
-        <button>Añadir</button>
+        <button class="show-modal">Añadir</button>
+
+        <span class="overlay"></span>
+
+        <div class="modal-box">
+            <i class='bx bx-calendar-plus'></i>
+            <h2>Agrega un nuevo producto.</h2>
+            <div class="input-box animation" style="--i:18; --j:1">
+                <input id="txtDesc" type="text" required>
+                <label>Nombre del producto</label>
+            </div>
+            <div class="input-box animation" style="--i:18; --j:1">
+                <input id="txtPrecio" type="number" required>
+                <label>Precio del producto</label>
+            </div>
+            <div class="input-box animation" style="--i:18; --j:1">
+                <input id="txtStock" type="number" required>
+                <label>Cantidad en stock</label>
+            </div>
+            <div class="buttons">
+                <button class="close-btn">Cerrar</button>
+                <button id="add-btn" class="add-btn">Agregar</button>
+            </div> 
+        </div>
     </div>
 
     <div class="images">
@@ -123,5 +121,6 @@
     </div>
 
     <script src="./JS/script.js"></script>
+    <script src="./JS/insert.js"></script>
 </body>
 </html>

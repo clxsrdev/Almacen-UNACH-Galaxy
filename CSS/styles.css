@@ -16,7 +16,7 @@ body {
     align-items: center;
     min-height: 100%;
     width: 100%; /* Ajustar al ancho de la pantalla */
-    background: url('/image/indexBack.png') no-repeat;
+    background: url('../Image/indexBack.png') no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -25,12 +25,13 @@ body {
 .card {
     width: 100%; /* Ajustar al ancho de la pantalla */
     height: 100%; /* Ajustar al alto de la pantalla */
-    background: url('/image/cardindex.png') no-repeat;
+    background: url('../Image/cardindex.png') no-repeat;
     background-size: cover;
     background-position: center;
     position: absolute;
     top: 0;
     left: 0;
+    overflow: hidden;
 }
 
 .welcome {

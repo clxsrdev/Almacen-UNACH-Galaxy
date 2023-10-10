@@ -16,8 +16,6 @@ $(document).ready(function(){
 
 // Function to register a user
 function register(){
-	var nombre = $('#nombre').val();
-    var appat = $('#appat').val();
     var usuario = $('#usuario').val();
     var email = $('#email').val();
     var contrasena = $('#contrasena').val();
@@ -26,8 +24,6 @@ function register(){
 		url: 'controller/insertUser.php',
 		method: 'POST',
 		data: {
-			rgNombre: nombre,
-			rgAppat: appat,
             rgUsuario: usuario,
             rgEmail: email,
             rgContra: contrasena
@@ -51,14 +47,12 @@ function register(){
 
 function validarCampos() {
     // Obtener los valores de los campos
-    var nombre = document.getElementById("nombre").value;
-    var appat = document.getElementById("appat").value;
     var usuario = document.getElementById("usuario").value;
     var email = document.getElementById("email").value;
     var contrasena = document.getElementById("contrasena").value;
 
     // Validar que todos los campos estén llenos
-    if (nombre === "" || appat === "" || usuario === "" || email === "" || contrasena === "") {
+    if (usuario === "" || email === "" || contrasena === "") {
         return false; // Al menos un campo está vacío
     } else {
         return true; // Todos los campos están llenos

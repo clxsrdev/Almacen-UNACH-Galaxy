@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>UNACH Galaxy</title>
-    <link rel="icon" href="/image/moonico.png">
+    <link rel="icon" href="./Image/moonico.png">
     <link href="./CSS/log-style.css" rel="stylesheet">
 
     <!-- Google Fonts -->
@@ -63,21 +63,21 @@
             <h2 class="animation" style="--i:17; --j:0">Crear <span class="span">Cuenta</span></h2>
             <form action="#">
                 <div class="input-box animation" style="--i:18; --j:1">
-                    <input type="text" required>
+                    <input id="usuario" type="text" required>
                     <label>Nombre de usuario</label>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box animation" style="--i:19; --j:2">
-                    <input type="text" required>
+                    <input id="email" type="text" required>
                     <label>Email</label>
                     <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box animation" style="--i:20; --j:3">
-                    <input type="password" required>
+                    <input id="contrasena" type="password" required>
                     <label>Contraseña</label>
                     <i class='bx bxs-lock-alt' ></i>
                 </div>
-                <button type="submit" class="btn animation" style="--i:21; --j:4">Registrar</button>
+                <button type="button" id="register" class="btn animation" style="--i:21; --j:4">Registrar</button>
 
                 <div class="logreg-link animation" style="--i:22; --j:5">
                     <p>¿Ya tienes cuenta? <a href="#" class="login-link">Iniciar sesión</a></p>
@@ -88,5 +88,6 @@
 
     <script src="./JS/script.js"></script>
     <script src="./JS/login.js"></script>
+    <script src="./JS/newRegister.js"></script>
 </body>
 </html>

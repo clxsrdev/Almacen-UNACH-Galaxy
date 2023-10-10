@@ -4,7 +4,7 @@
 	$link = conectaDB();
 
   //  if(isset($_POST['guardar'])==true)
-    if(isset($_POST['guardar'])){	
+    if(isset($_POST['txtDesc']) && isset($_POST['txtPrecio']) && isset($_POST['txtStock'])){	
 
         $desc_producto= $_POST['txtDesc'];
         $precio= $_POST['txtPrecio'];
@@ -15,12 +15,14 @@
         $result = mysqli_query($link,$query);
 
         if($result){
-            Header("Location: ../dashboard.php");
+            // Header("Location: dashboard.php");
+            echo json_encode(array('success' => 1)); 
         } else {
+            echo json_encode(array('success' => 0)); 
             echo "<script> alert('Algo salio mal, intentalo de nuevo'); </script>";
         }
 
-        mysqli_free_result($result);
+        // mysqli_free_result($result);
         mysqli_close($link);
 
     }

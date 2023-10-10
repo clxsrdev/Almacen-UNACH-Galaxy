@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNACH Galaxy</title>
-    <link rel="icon" href="/image/moonico.png">
+    <link rel="icon" href="./Image/moonico.png">
     <link href="./CSS/styles.css" rel="stylesheet">
 
     <!-- Google Fonts -->

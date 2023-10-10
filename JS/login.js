@@ -25,7 +25,7 @@ function login(){
             if (jsonData.success == 1)
 			{	
                 alert("Has iniciado sesión con éxito");
-				window.location.href = './dashboard.php';
+				window.location.href = 'dashboard.php';
 			}else{
 				alert("Nombre y/o contraseña incorrecta");
 			}
