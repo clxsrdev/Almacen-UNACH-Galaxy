@@ -1,0 +1,151 @@
+* {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.background {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100%;
+    width: 100%; /* Ajustar al ancho de la pantalla */
+    background: url('/image/indexBack.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card {
+    width: 100%; /* Ajustar al ancho de la pantalla */
+    height: 100%; /* Ajustar al alto de la pantalla */
+    background: url('/image/cardindex.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.welcome {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 80px; /* Tamaño de la fuente */
+    font-weight: bold; /* Peso de la fuente (puede ser normal, bold, etc.) */
+    color: #192645; /* Color del texto */
+    position: absolute; /* Posición absoluta para colocar el h1 de forma específica */
+    top: 200px; /* Posición desde la parte superior */
+    left: 180px; /* Posición desde la parte izquierda */
+    width: fit-content;
+    height: fit-content;
+}
+
+.name {
+    font-family: 'League+Spartan', sans-serif;
+    font-size: 80px; /* Tamaño de la fuente */
+    font-weight: bold; /* Peso de la fuente (puede ser normal, bold, etc.) */
+    color: #23576D; /* Color del texto */
+    position: absolute; /* Posición absoluta para colocar el h1 de forma específica */
+    top: 300px; /* Posición desde la parte superior */
+    left: 180px; /* Posición desde la parte izquierda */
+    width: fit-content;
+    height: fit-content;
+}
+
+.name .galaxy {
+    color: #568088; /* Color diferente para la palabra "Galaxy" */
+}
+
+.about {
+    font-family: 'Open+Sans', sans-serif;
+    font-size: 20px; /* Tamaño de la fuente */
+    color: #192645; /* Color del texto */
+    position: absolute; /* Posición absoluta para colocar el h1 de forma específica */
+    top: 500px; /* Posición desde la parte superior */
+    left: 190px; /* Posición desde la parte izquierda */
+    width: fit-content;
+    height: fit-content;
+}
+
+.register-container {
+    position: absolute;
+    bottom: 200px;
+    left: 190px;
+    width: 200px; /* Ajustar el ancho del contenedor */
+    height: 60px; /* Ajustar la altura del contenedor */
+}
+
+.register {
+    transition: background-color 0.5s ease;
+    background-color: #080326; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    font-size: 20px; /* Tamaño de la fuente del texto */
+    font-family: 'Open Sans', sans-serif; /* Fuente del texto */
+    font-weight: bold;
+    border: none; /* Quita el borde predeterminado del botón */
+    padding: 10px 20px; /* Ajusta el relleno del botón */
+    border-radius: 20px; /* Establece las esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    text-decoration: none;
+}
+
+.register:hover{
+    transition: background-color 0.2s ease;
+    background-color: #79b0bb;
+    color: #080326;
+}
+
+.iniciar {
+    position: absolute;
+    background-color: #08032600;
+    color: #080326; /* Color del texto */
+    font-size: 20px; /* Tamaño de la fuente del texto */
+    font-family: 'Open Sans', sans-serif; /* Fuente del texto */
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px; /* Ajusta el relleno del botón */
+    border-radius: 20px; /* Establece las esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    width: 110px; /* Ajustar el ancho del contenedor */
+    height: 60px; /* Ajustar la altura del contenedor */
+    left: 1100px;
+    top: 103px;
+    transition: box-shadow 0.5s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0);
+}
+
+.iniciar:hover {
+    color: #79b0bb;
+    transition: box-shadow 0.2s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.crear {
+    position: absolute;
+    background-color: #08032600;
+    color: #79b0bb; /* Color del texto */
+    font-size: 20px; /* Tamaño de la fuente del texto */
+    font-family: 'Open Sans', sans-serif; /* Fuente del texto */
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px; /* Ajusta el relleno del botón */
+    border-radius: 20px; /* Establece las esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    width: 120px; /* Ajustar el ancho del contenedor */
+    height: 60px; /* Ajustar la altura del contenedor */
+    left: 1300px;
+    top: 103px;
+    transition: box-shadow 0.5s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0);
+}
+
+.crear:hover {
+    color: #080326;
+    transition: box-shadow 0.2s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
